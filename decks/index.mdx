@@ -1,0 +1,336 @@
+import { Image, Notes } from 'mdx-deck'
+import ionic from '../theme/ionic'
+import Provider from '../layout/provider'
+import MhSplit from '../layout/split'
+import ColorLayout from '../layout/color'
+import {  CodeSurfer } from 'code-surfer';
+import {  vsDark } from '@code-surfer/themes';
+import CodeSandbox from '../components/CodeSandbox'
+import { Tweet } from 'react-twitter-widgets'
+
+export const themes = [ionic, Provider];
+
+<br/>
+
+### Stencil
+Universal Web Components
+[Mike Hartington | @mhartington](https://twitter.com/mhartington)
+
+---
+
+<h3>Goals</h3>
+<ul>
+  <li>History lesson</li>
+  <li>Current events</li>
+  <li>Future is bright</li>
+</ul>
+
+---
+
+
+<ColorLayout>
+<h3 style="font-family: 'Franklin Gothic'; color: #4bd5ee">A long time ago...</h3>
+</ColorLayout>
+
+---
+
+#### Components on the Web
+Known by many different names
+
+Mostly built in
+
+Custom ones...require JS
+
+---
+
+#### Early Players in this landscape include
+
+---
+
+<h4>jQuery</h4>
+<p>Everyone's first "framework"</p>
+<p>Made web dev less hostile</p>
+<p>jQuery Plugins: first "component" model</p>
+
+---
+
+<h4>Hello World: Jquery</h4>
+<CodeSandbox
+  url="https://codesandbox.io/embed/determined-sutherland-v6dxg?theme=dark&codemirror=1&runonclick=0&fontsize=18&hidenavigation=1&module=%2Fsrc%2Findex.js&
+"
+/>
+
+---
+
+<p>jQuery was simple</p>
+<p>Plugin API was 👌</p>
+
+---
+
+<h4>Backbone</h4>
+<p>Structure and composability</p>
+<p>jQuery? You bet!</p>
+<p>Concept of a "base"</p>
+
+---
+
+<CodeSandbox url="https://codesandbox.io/embed/magical-tree-obo5h?theme=dark&codemirror=1&runonclick=0&fontsize=18&hidenavigation=1&module=%2Fsrc%2Findex.js& " />
+
+---
+
+Paved the way for a lot of ideas we see today
+
+<p>No 2-way data binding</p>
+<p>More modules, not components</p>
+<p>DOM updates, not batched</p>
+
+---
+
+<h3>MV* framework Wars</h3>
+<p>Knockout, Ember, AngularJS</p>
+<p>All pushing similar concepts</p>
+<p>Custom components are getting closer</p>
+
+---
+
+### Fast forward to today
+
+---
+
+<h3 >MVC → Components</h3>
+<p>Angular, (P)React, Vue</p>
+<p>Again, all similar ideas</p>
+<p>Custom components all the way down</p>
+
+---
+
+### Angular
+
+<CodeSandbox url="https://codesandbox.io/embed/angular-o2d2w?theme=dark&codemirror=1&runonclick=0&fontsize=18&hidenavigation=1&module=%2Fsrc%2Fapp%2Fapp.component.ts" />
+
+---
+
+### React
+
+<CodeSandbox url="https://codesandbox.io/embed/frosty-tdd-smw7z?theme=dark&codemirror=1&runonclick=0&fontsize=18&hidenavigation=1&module=%2Fsrc%2Findex.js& " />
+
+---
+
+### Vue
+
+<CodeSandbox url="https://codesandbox.io/embed/vue-template-sg6fx?theme=dark&codemirror=1&runonclick=0&fontsize=18&hidenavigation=1&module=%2Fsrc%2FApp.vue& " />
+
+---
+
+#### _But that's not all..._
+
+---
+
+### Ember, Preact, ChooJS, SkateJS, CanJS, DioJS, HyperHTML, HyperApp, viperHtml Surplus, DOJO, Polymer, lit-html, lit-element, lit-html-element, Stimulus, Aurelia, Knockout, Backbone, Marionette, Riot, Inferno, Svelt, Marko, Mithril, etc
+
+---
+
+#### _oh my_
+
+---
+
+> Frameworks keep reinventing the wheel of with custom UI, but make APIs and implementation details that are not compatible with one another
+
+---
+
+<img width="600" src="https://imgs.xkcd.com/comics/standards.png" alt="" />
+
+---
+
+What if...
+
+---
+
+<h4>Enter Web Components</h4>
+<p>👋</p>
+
+---
+
+<h4>What ever are web components</h4>
+<p>Template, Custom Elements, Shadow DOM</p>
+<p>API that can work with all the frameworks</p>
+<p><a href="https://custom-elements-everywhere.com">custom-elements-everywhere.com</a></p>
+
+---
+
+<p><em>Isn't this a Google/Chrome thing?</em></p>
+
+<Appear>
+
+<div>
+  <img width="80" src="img/browser_safari.svg"  alt="" />
+  <img width="80" src="img/browser_chrome.svg"  alt="" />
+  <img width="80" src="img/browser_edge.svg"    alt="" />
+  <img width="80" src="img/browser_firefox.svg" alt="" />
+</div>
+
+<em>So is this like Polymer</em>
+<p>Not exactly, Polymer === Polyfill</p>
+
+</Appear>
+
+---
+
+
+<CodeSandbox url="https://codesandbox.io/embed/falling-night-iguzi?theme=dark&codemirror=1&runonclick=0&fontsize=18&hidenavigation=1&module=%2Fsrc%2Findex.js& " />
+
+---
+
+<CodeSandbox url="https://codesandbox.io/embed/practical-rubin-2l6he?theme=dark&codemirror=1&runonclick=0&fontsize=18&hidenavigation=1&module=%2Fsrc%2Findex.js& " />
+
+
+[pearlbea/better-img](https://github.com/pearlbea/better-img)
+
+---
+
+Now this is nice...but feel lacking
+
+---
+
+<p>Updates are not optimized</p>
+<p>Properties are not "smart"</p>
+<p>Overall: too low level</p>
+
+---
+
+<img src="img/stencil-logo.svg" style="width: 50vw" />
+
+---
+
+<h4>What is Stencil</h4>
+<p>A compiler for web components</p>
+<p>Familiar APIs from across frameworks</p>
+<p>Reactive Data binding</p>
+<p>JSX/VDOM for speed</p>
+
+---
+
+<h4>Stencil is not</h4>
+<p>A framework 😀</p>
+
+
+---
+
+```typescript
+@Component({
+  tag: 'my-name',
+  styleUrl: 'my-name.scss'
+})
+export class MyName {
+  @Prop() name: string;
+
+  render() {
+    return <h1>Hello, my name is {this.name}</h1>;
+  }
+}
+```
+
+---
+
+```html
+<my-name name="Mike"></my-name>
+```
+
+---
+
+<ColorLayout bgColor="#1b2b34">
+<h4> <code style={{color: '#99c794'}}> $ DEMO TIME </code> </h4>
+</ColorLayout>
+
+---
+
+<h4>API</h4>
+<table>
+  <tbody>
+    <tr class="odd">
+      <td><code>@Component</code></td>
+      <td>Decorate a class a web component</td>
+    </tr>
+    <tr class="even">
+      <td><code>@Prop()</code></td>
+      <td>Expose a class property as an element property</td>
+    </tr>
+    <tr class="odd">
+      <td><code>@State()</code></td>
+      <td>Internal data that can cause a rerender</td>
+    </tr>
+    <tr class="even">
+      <td><code>@Event()</code></td>
+      <td>Decorator for custom events</td>
+    </tr>
+    <tr class="odd">
+      <td><code>@Listen()</code></td>
+      <td>Decorator for listening to custom events</td>
+    </tr>
+    <tr class="even">
+      <td><code>@Element()</code></td>
+      <td>Get a raw DOM reference to the current component</td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+<h4>So, why make Stencil</h4>
+<p>Interoperability</p>
+<p>Performance</p>
+<p>Stability</p>
+
+---
+
+<h3>But wait, there's more!</h3>
+
+---
+
+<h4>Frameworks on Web Components</h4>
+<p>Angular Elements: Wrap Angular components as WC</p>
+<img src="img/evan.png" width="600" />
+
+---
+
+### Major players agree
+
+Common API is needed for frameworks
+
+---
+
+Web Components provide a primitive
+
+Stencil Provides a slightly better abstraction
+
+Still Web Components
+
+---
+
+#### Stencil in the wild today
+
+<Appear>
+
+<p>Ionic</p>
+
+<p>Porsche</p>
+
+<p>Amazon</p>
+
+<p>Apple</p>
+
+</Appear>
+
+---
+
+Web Components are here to stay
+
+---
+
+
+### Thanks
+
+[Mike Hartington | @mhartington](https://twitter.com/mhartington)
+
+#### `</html>`
+
