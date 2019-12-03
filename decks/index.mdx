@@ -14,6 +14,7 @@ export const themes = [ionic, Provider];
 
 ### Stencil
 Universal Web Components
+
 [Mike Hartington | @mhartington](https://twitter.com/mhartington)
 
 ---
@@ -216,10 +217,12 @@ Now this is nice...but feel lacking
 
 ---
 
+<CodeSurfer>
+
 ```typescript
 @Component({
-  tag: 'my-name',
-  styleUrl: 'my-name.scss'
+tag: 'my-name',
+styleUrl: 'my-name.scss'
 })
 export class MyName {
   @Prop() name: string;
@@ -229,12 +232,17 @@ export class MyName {
   }
 }
 ```
+</CodeSurfer>
 
 ---
+
+<CodeSurfer>
 
 ```html
 <my-name name="Mike"></my-name>
 ```
+
+</CodeSurfer>
 
 ---
 
@@ -244,35 +252,20 @@ export class MyName {
 
 ---
 
+<div>
 <h4>API</h4>
-<table>
-  <tbody>
-    <tr class="odd">
-      <td><code>@Component</code></td>
-      <td>Decorate a class a web component</td>
-    </tr>
-    <tr class="even">
-      <td><code>@Prop()</code></td>
-      <td>Expose a class property as an element property</td>
-    </tr>
-    <tr class="odd">
-      <td><code>@State()</code></td>
-      <td>Internal data that can cause a rerender</td>
-    </tr>
-    <tr class="even">
-      <td><code>@Event()</code></td>
-      <td>Decorator for custom events</td>
-    </tr>
-    <tr class="odd">
-      <td><code>@Listen()</code></td>
-      <td>Decorator for listening to custom events</td>
-    </tr>
-    <tr class="even">
-      <td><code>@Element()</code></td>
-      <td>Get a raw DOM reference to the current component</td>
-    </tr>
-  </tbody>
-</table>
+
+|              |                            |
+|--------------|----------------------------|
+| `@State()`   | Internal State             |
+| `@Watch()`   | Callback when prop changes |
+| `@Element()` | Direct DOM node of element |
+| `@Method()`  | Exposed public method      |
+| `@Event()`   | Custom Event declaration   |
+| `@Listen()`  | listens for DOM events     |
+
+
+</div>
 
 ---
 

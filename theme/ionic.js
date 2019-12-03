@@ -1,6 +1,6 @@
 export default {
   fonts: {
-    body: '"Inter", system-ui, sans-serif',
+    body: 'system-ui, sans-serif',
     heading: 'inherit',
     monospace: '"Operator Mono", monospace'
   },
@@ -26,11 +26,14 @@ export default {
     heading: '#151D34'
   },
   styles: {
+    Slide:{
+      fontSize: 64
+    },
     h1: {
       color: 'primary',
       fontSize: '2em',
-      fontWeight: 900,
-      textTransform: 'uppercase',
+      fontWeight: 300,
+      textTransform: 'lowercase',
       marginTop: 0,
       marginBottom: 0,
       textAlign: 'center'
@@ -41,7 +44,7 @@ export default {
       textAlign: 'center'
     },
     h2: {
-      fontSize: '3.5em',
+      fontSize: '1.6em',
       fontWeight: 900,
       marginBottom: 0,
       marginTop: 0,
@@ -51,9 +54,9 @@ export default {
       color: 'heading'
     },
     h3: {
-      fontSize: '1.75em',
-      marginBottom: 10,
+      fontSize: '1.3em',
       fontWeight: 900,
+      marginBottom: 10,
       marginTop: 10,
       textTransform: 'uppercase',
       wordSpacing: 10,
@@ -62,19 +65,28 @@ export default {
     },
     h4: {
       textAlign: 'center',
-      color: 'heading'
+      color: 'heading',
+      fontSize: '1.2em',
+      marginBottom: 10,
+      marginTop: 10,
+
     },
     root: {
       fontFamily: 'body',
       lineHeight: 'body',
       fontWeight: 'body',
-      fontSize: 16
+      fontSize: 64
     },
     p: {
       fontFamily: 'body',
       fontWeight: 'body',
       lineHeight: 'body',
-      textAlign: 'center'
+      textAlign: 'center',
+      fontSize: '1em',
+      margin: 0
+    },
+    li: {
+      fontSize: '1em'
     },
     a: {
       color: 'text',
@@ -118,12 +130,13 @@ export default {
     },
     th: {
       textAlign: 'left',
-      borderBottomStyle: 'solid'
+      borderStyle: 'none'
     },
     td: {
       textAlign: 'left',
-      borderBottomStyle: 'solid'
+      borderStyle: 'none'
     },
+    tr: {},
     img: {
       maxWidth: '100%'
     },

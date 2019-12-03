@@ -1,6 +1,6 @@
 module.exports = {
-  // pathPrefix: '/ionic-cross-platform',
-  pathPrefix: '/',
+  pathPrefix: '/stenciljs',
+  // pathPrefix: '/',
   plugins: [
     'gatsby-plugin-catch-links',
     {
